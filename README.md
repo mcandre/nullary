@@ -30,6 +30,10 @@ https://www.npmjs.com/package/nullary
 
 * [Node.js](https://nodejs.org/) 8.16.0+
 
+## Recommended
+
+* [GNU findutils](https://www.gnu.org/software/findutils/) (e.g., see `brew info findutils`)
+
 # LICENSE
 
 FreeBSD
