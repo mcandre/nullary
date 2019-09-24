@@ -1,25 +1,22 @@
 'use strict';
 
-var
-    nullary = require('../lib/nullary'),
+var nullary = require('../lib/nullary'),
 
     assert = require('assert');
 
 describe('nullary', function() {
     describe('set', function() {
         it('should persist data through distinct function scopes', function() {
-            var
-                expectedCount = 3,
+            var expectedCount = 3,
                 expectedKind = 'red delicious';
 
             (function() {
-                var apples = { count: expectedCount, kind: expectedKind };
+                var apples = {count: expectedCount, kind: expectedKind};
                 nullary.set(nullary.background, 'fruit', apples);
             })();
 
             (function() {
-                var
-                    observedFruit = nullary.get(nullary.background, 'fruit'),
+                var observedFruit = nullary.get(nullary.background, 'fruit'),
                     observedCount = observedFruit.count,
                     observedKind = observedFruit.kind;
 
@@ -29,8 +26,7 @@ describe('nullary', function() {
         });
 
         it('should handle custom namespaces', function() {
-            var
-                namespace = 'Hutt syndicate',
+            var namespace = 'Hutt syndicate',
                 bountyHunter = 'Boba Fett';
 
             nullary.set(namespace, 'henchman', bountyHunter);
@@ -49,7 +45,7 @@ describe('nullary', function() {
         it('should pass through missing keys', function() {
             nullary.resetNamespaces();
 
-            assert.equal('undefined', typeof(nullary.get(nullary.background, 'anaerobic bacterium')));
+            assert.equal('undefined', typeof (nullary.get(nullary.background, 'anaerobic bacterium')));
         });
     });
 
