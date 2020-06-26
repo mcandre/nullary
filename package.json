@@ -20,7 +20,6 @@
         "grunt": "~1.0.4",
         "grunt-cli": "~1.3.2",
         "grunt-exec": "~0.4.5",
-        "jsfmt": "0.5.3",
         "jshint": "^2.10.2",
         "jslint": ">=0.8.1",
         "mocha": "~6.2.0"
